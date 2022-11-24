@@ -123,9 +123,9 @@ export default class MoneyManager extends Component {
               <span> Money Manager</span>
             </p>
           </div>
-          <ul className="money-details-container">
+          <div className="money-details-container">
             <MoneyDetails moneyDetails={{income, expenses}} />
-          </ul>
+          </div>
           <div className="add-transaction-and-history-container">
             <form onSubmit={this.addTransactionItem} className="form">
               <h1 className="add-transaction-heading">Add Transaction</h1>

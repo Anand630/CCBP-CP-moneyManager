@@ -52,11 +52,12 @@ span {
 }
 
 .money-details-container {
-  list-style: none;
   display: flex;
   justify-content: space-between;
-  padding-left: 0;
+
   width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .add-transaction-and-history-container {
@@ -222,12 +223,11 @@ select {
     border-radius: 15px;
   }
   .money-details-container {
-    list-style: none;
     display: flex;
     flex-direction: column;
 
-    padding-left: 0;
     width: 100%;
+    margin-bottom: 0;
   }
 
   .add-transaction-and-history-container {

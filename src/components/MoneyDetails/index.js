@@ -5,7 +5,7 @@ const MoneyDetails = props => {
   const {income, expenses} = moneyDetails
   return (
     <>
-      <li className="each-money-details-container your-balance-styling">
+      <div className="each-money-details-container your-balance-styling">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/balance-image.png "
           className="money-detail-logo"
@@ -13,12 +13,10 @@ const MoneyDetails = props => {
         />
         <div className="heading-amount-type-amount-container">
           <p className="amount-type">Your Balance</p>
-          <p testid="balanceAmount" className="amount">
-            Rs {income - expenses}
-          </p>
+          <p className="amount">Rs {income - expenses}</p>
         </div>
-      </li>
-      <li className="each-money-details-container your-income-styling">
+      </div>
+      <div className="each-money-details-container your-income-styling">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/income-image.png "
           className="money-detail-logo"
@@ -26,12 +24,10 @@ const MoneyDetails = props => {
         />
         <div className="heading-amount-type-amount-container">
           <p className="amount-type">Your Income</p>
-          <p testid="incomeAmount" className="amount">
-            Rs {income}
-          </p>
+          <p className="amount">Rs {income}</p>
         </div>
-      </li>
-      <li className="each-money-details-container your-expenses-styling">
+      </div>
+      <div className="each-money-details-container your-expenses-styling">
         <img
           src="https://assets.ccbp.in/frontend/react-js/money-manager/expenses-image.png "
           className="money-detail-logo"
@@ -39,11 +35,9 @@ const MoneyDetails = props => {
         />
         <div className="heading-amount-type-amount-container">
           <p className="amount-type">Your Expenses</p>
-          <p testid="expensesAmount" className="amount">
-            Rs {expenses}
-          </p>
+          <p className="amount">Rs {expenses}</p>
         </div>
-      </li>
+      </div>
     </>
   )
 }
