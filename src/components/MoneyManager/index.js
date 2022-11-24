@@ -146,7 +146,7 @@ export default class MoneyManager extends Component {
                   onChange={this.onAmountInput}
                   placeholder="AMOUNT"
                   id="amount"
-                  type="number"
+                  type="number tel"
                 />
               </div>
               <div className="label-input-container">
