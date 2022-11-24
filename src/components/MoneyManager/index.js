@@ -31,7 +31,10 @@ export default class MoneyManager extends Component {
 
   onAmountInput = e => this.setState({amountInput: parseInt(e.target.value)})
 
-  onOptionSelect = e => this.setState({typeId: e.target.value})
+  onOptionSelect = e =>
+    this.setState({
+      typeId: e.target.value === 'INCOME' ? 'Income' : 'Expenses',
+    })
 
   addTransactionItem = e => {
     e.preventDefault()
@@ -145,11 +148,11 @@ export default class MoneyManager extends Component {
                 <select onChange={this.onOptionSelect} id="select">
                   <option
                     defaultChecked
-                    value={transactionTypeOptions[0].displayText}
+                    value={transactionTypeOptions[0].optionId}
                   >
                     Income
                   </option>
-                  <option value={transactionTypeOptions[1].displayText}>
+                  <option value={transactionTypeOptions[1].optionId}>
                     Expenses
                   </option>
                 </select>
