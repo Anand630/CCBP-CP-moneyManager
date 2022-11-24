@@ -60,7 +60,11 @@ export default class MoneyManager extends Component {
         areFieldsEmpty: false,
         // balance: prevState.income + amountInput - expenses,
       }))
-    } else if (typeId === 'Expenses') {
+    } else if (
+      typeId === 'Expenses' &&
+      amountInput <= income - expenses &&
+      amountInput !== ''
+    ) {
       this.setState(prevState => ({
         transactionsList: [...prevState.transactionsList, newTransaction],
         expenses: prevState.expenses + amountInput,
@@ -70,12 +74,11 @@ export default class MoneyManager extends Component {
         areFieldsEmpty: false,
         // balance: income - prevState.expenses - amountInput,
       }))
+    } else if (amountInput !== '' && titleInput !== '') {
+      this.setState({isError: true, areFieldsEmpty: false})
+    } else if (amountInput === '' || titleInput === '') {
+      this.setState({areFieldsEmpty: true, isError: false})
     }
-    // else if (amountInput !== '' && titleInput !== '') {
-    //   this.setState(prevState => ({isError: !prevState.isError}))
-    // } else if (amountInput === '' || titleInput === '') {
-    //   this.setState(prevState => ({areFieldsEmpty: !prevState.areFieldsEmpty}))
-    // }
   }
 
   deleteTransaction = (id, type, refund) => {
