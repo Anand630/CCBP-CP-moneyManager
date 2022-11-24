@@ -33,7 +33,10 @@ export default class MoneyManager extends Component {
 
   onOptionSelect = e =>
     this.setState({
-      typeId: e.target.value === 'INCOME' ? 'Income' : 'Expenses',
+      typeId:
+        e.target.value === 'INCOME'
+          ? transactionTypeOptions[0].displayText
+          : transactionTypeOptions[1].displayText,
     })
 
   addTransactionItem = e => {
